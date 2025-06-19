@@ -20,23 +20,23 @@ This project focuses on predicting the actual productivity of garment employees 
 
 ## Table of Contents
 
-1.  [Project Overview](https://www.google.com/search?q=%231-project-overview)
-2.  [Project Evolution: A Tale of Two Notebooks](https://www.google.com/search?q=%232-project-evolution-a-tale-of-two-notebooks)
-      - [Initial Approach: `LAB14-RUELAS.ipynb`](https://www.google.com/search?q=%2321-initial-approach-lab14-ruelasipynb)
-      - [Advanced Approach: `LAB14-RUELAS-robust.ipynb`](https://www.google.com/search?q=%2322-advanced-approach-lab14-ruelas-robustipynb)
-      - [Interpreting the Final Results](https://www.google.com/search?q=%2323-interpreting-the-final-results)
-3.  [Project Structure](https://www.google.com/search?q=%233-project-structure)
-4.  [Methodology and Technical Details](https://www.google.com/search?q=%234-methodology-and-technical-details)
-      - [Feature Engineering](https://www.google.com/search?q=%2341-feature-engineering)
-      - [Modeling and Hyperparameter Tuning](https://www.google.com/search?q=%2342-modeling-and-hyperparameter-tuning)
-      - [Evaluation](https://www.google.com/search?q=%2343-evaluation)
-      - [Code Modularity and Testing](https://www.google.com/search?q=%2344-code-modularity-and-testing)
-5.  [How to Run the Project](https://www.google.com/search?q=%235-how-to-run-the-project)
-      - [Prerequisites](https://www.google.com/search?q=%2351-prerequisites)
-      - [Step-by-Step Installation and Execution](https://www.google.com/search?q=%2352-step-by-step-installation-and-execution)
-6.  [Final Results](https://www.google.com/search?q=%236-final-results)
+1. [Project Overview](#1-project-overview)
+2. [Project Evolution: A Tale of Two Notebooks](#2-project-evolution-a-tale-of-two-notebooks)
+   - [Initial Approach: `LAB14-RUELAS.ipynb`](#21-initial-approach-lab14-ruelasipynb)
+   - [Advanced Approach: `LAB14-RUELAS-robust.ipynb`](#22-advanced-approach-lab14-ruelas-robustipynb)
+   - [Interpreting the Final Results](#23-interpreting-the-final-results)
+3. [Project Structure](#3-project-structure)
+4. [Methodology and Technical Details](#4-methodology-and-technical-details)
+   - [Feature Engineering](#41-feature-engineering)
+   - [Modeling and Hyperparameter Tuning](#42-modeling-and-hyperparameter-tuning)
+   - [Evaluation](#43-evaluation)
+   - [Code Modularity and Testing](#44-code-modularity-and-testing)
+5. [How to Run the Project](#5-how-to-run-the-project)
+   - [Prerequisites](#51-prerequisites)
+   - [Step-by-Step Installation and Execution](#52-step-by-step-installation-and-execution)
+6. [Final Results](#6-final-results)
 
-## 1\. Project Overview
+## 1. Project Overview
 
 The primary objective of this project is to build a reliable machine learning model to predict the `actual_productivity` of garment factory employees. The project leverages a real-world dataset and explores various regression and ensemble techniques to achieve the best possible performance. A significant emphasis is placed not just on achieving a high performance score, but on ensuring the evaluation process is robust, reproducible, and that the final model's performance is trustworthy.
 
@@ -44,7 +44,7 @@ The primary objective of this project is to build a reliable machine learning mo
   - **Target Variable:** `actual_productivity`
   - **Core Task:** Regression
 
-## 2\. Project Evolution: A Tale of Two Notebooks
+## 2. Project Evolution: A Tale of Two Notebooks
 
 This repository contains two distinct approaches to solving the problem, demonstrating a progression from a simple baseline to a sophisticated and robust pipeline.
 
@@ -73,7 +73,7 @@ The robust process identified **XGBoost** as the best-performing model. On the f
 
 At first glance, this may seem slightly lower than the initial result. However, this new score is **far more valuable and trustworthy**. The consistency between the cross-validation score (R² ≈ 0.499) and the final test score (R² ≈ 0.482) confirms that the model generalizes well to new, unseen data and is not overfitted. The "robust" project successfully produced a reliable model with a performance metric that can be trusted in a real-world scenario.
 
-## 3\. Project Structure
+## 3. Project Structure
 
 The project is organized using a standard data science project structure to ensure modularity, clarity, and ease of maintenance.
 
@@ -103,15 +103,15 @@ Data_Mining-LAB14/
 
   - **Module Imports:** The notebooks, located in the `notebooks/` directory, use `sys.path` manipulation to correctly import modules from the `src/` directory, which is located one level up. This is a standard practice for maintaining a clean project structure.
 
-## 4\. Methodology and Technical Details
+## 4. Methodology and Technical Details
 
 ### 4.1. Feature Engineering
 
 The robust approach (`utils_robust.py`) significantly enhanced the dataset by:
 
-1.  **Parsing Dates:** Converting the `date` string column into a datetime object.
-2.  **Extracting Time-Based Features:** Creating `month`, `week_of_year`, and `day_of_week` to capture temporal patterns.
-3.  **Creating Domain-Specific Ratios:** Engineering new features like `incentive_per_target` to model relationships between existing variables.
+1. **Parsing Dates:** Converting the `date` string column into a datetime object.
+2. **Extracting Time-Based Features:** Creating `month`, `week_of_year`, and `day_of_week` to capture temporal patterns.
+3. **Creating Domain-Specific Ratios:** Engineering new features like `incentive_per_target` to model relationships between existing variables.
 
 ### 4.2. Modeling and Hyperparameter Tuning
 
@@ -129,7 +129,7 @@ The final evaluation was conducted on a held-out test set (20% of the data) that
   - All core logic (data loading, feature engineering, model training) was encapsulated in functions within the `src/utils_robust.py` module. This promotes code reuse and makes the main notebook cleaner and more readable.
   - Unit tests were written using the `pytest` framework to validate the functionality of the data processing functions, ensuring their reliability and correctness.
 
-## 5\. How to Run the Project
+## 5. How to Run the Project
 
 To replicate the results of this project, follow the steps below. This workflow, based on a terminal and a virtual environment, is the recommended industry standard.
 
@@ -140,49 +140,49 @@ To replicate the results of this project, follow the steps below. This workflow,
 
 ### 5.2. Step-by-Step Installation and Execution
 
-1.  **Clone the Repository:**
+1. **Clone the Repository:**
 
-    ```bash
-    git clone <repository-url>
-    cd Data_Mining-LAB14
-    ```
+   ```bash
+   git clone <repository-url>
+   cd Data_Mining-LAB14
+   ```
 
-2.  **Create and Activate a Virtual Environment:** This isolates the project's dependencies.
+2. **Create and Activate a Virtual Environment:** This isolates the project's dependencies.
 
-    ```bash
-    # Create the virtual environment
-    python -m venv .venv
+   ```bash
+   # Create the virtual environment
+   python -m venv .venv
 
-    # Activate it (on Windows)
-    .\.venv\Scripts\activate
+   # Activate it (on Windows)
+   .\.venv\Scripts\activate
 
-    # On macOS/Linux:
-    # source .venv/bin/activate
-    ```
+   # On macOS/Linux:
+   # source .venv/bin/activate
+   ```
 
-3.  **Install All Dependencies:** The `requirements.txt` file contains all necessary libraries.
+3. **Install All Dependencies:** The `requirements.txt` file contains all necessary libraries.
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-4.  **Run Unit Tests (Optional but Recommended):** From the activated terminal, run `pytest` to ensure all utility functions are working correctly.
+4. **Run Unit Tests (Optional but Recommended):** From the activated terminal, run `pytest` to ensure all utility functions are working correctly.
 
-    ```bash
-    pytest
-    ```
+   ```bash
+   pytest
+   ```
 
-5.  **Launch Jupyter Lab and Run the Notebook:**
+5. **Launch Jupyter Lab and Run the Notebook:**
 
-    ```bash
-    jupyter lab
-    ```
+   ```bash
+   jupyter lab
+   ```
 
-      - In the Jupyter Lab interface that opens in your browser, navigate to the `notebooks/` directory.
-      - Open `LAB14-RUELAS-robust.ipynb`.
-      - Execute the cells sequentially from top to bottom.
+     - In the Jupyter Lab interface that opens in your browser, navigate to the `notebooks/` directory.
+     - Open `LAB14-RUELAS-robust.ipynb`.
+     - Execute the cells sequentially from top to bottom.
 
-## 6\. Final Results
+## 6. Final Results
 
 After a full execution of the robust pipeline, the best model was identified and evaluated on the unseen test set, yielding the following performance:
 
